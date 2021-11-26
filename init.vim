@@ -32,6 +32,7 @@ call plug#begin("~/.vim/plugged")
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
  Plug 'rust-lang/rust.vim'
  Plug 'scrooloose/nerdcommenter'
+ Plug 'posva/vim-vue'
 call plug#end()
 
 " coc-nvim, 

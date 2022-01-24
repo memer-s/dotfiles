@@ -23,6 +23,9 @@ set hidden
 set nobackup
 set nowritebackup
 
+" mouse support
+set mouse=a
+
 call plug#begin("~/.vim/plugged")
  Plug 'dracula/vim'
  Plug 'https://github.com/joshdick/onedark.vim.git'

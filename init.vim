@@ -29,14 +29,18 @@ set mouse=a
 call plug#begin("~/.vim/plugged")
  Plug 'dracula/vim'
  Plug 'https://github.com/joshdick/onedark.vim.git'
- Plug 'vim-airline/vim-airline'
- Plug 'vim-airline/vim-airline-themes'
  Plug 'scrooloose/nerdtree'
+ Plug 'scrooloose/nerdcommenter'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
  Plug 'rust-lang/rust.vim'
- Plug 'scrooloose/nerdcommenter'
  Plug 'posva/vim-vue'
+ Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+ Plug 'vim-scripts/vim-gitgutter'
+ Plug 'nvim-lualine/lualine.nvim'
+ Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
+
+filetype plugin on
 
 " coc-nvim, 
 if has('nvim')
@@ -51,7 +55,35 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 
-let g:airline#extensions#tabline#enabled = 1
 
 
-colorscheme onedark
+lua << EOF
+local catppuccin = require("catppuccin")
+catppuccin.setup()
+
+local function bruh() 
+   return [[very swag]]
+end
+
+local function getTime()
+   return os.date('%R')
+end
+
+require('lualine').setup {
+   options = {
+      icons_enabled = true,
+      theme = 'auto'
+
+   },
+   sections = {
+      lualine_a = {'mode'},
+      lualine_b = {'branch'},
+      lualine_c = {'filename'},
+      lualine_x = {bruh},
+      lualine_y = {'location'},
+      lualine_z = {getTime}
+   }
+}
+EOF
+
+colorscheme catppuccin

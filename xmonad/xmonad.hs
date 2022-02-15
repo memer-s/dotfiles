@@ -24,6 +24,7 @@ main = xmonad $ def { modMask = mod4Mask
    ,("M-S-d", spawn "discord")
    ,("M-S-s", spawn "maim -s -u | xclip -selection clipboard -t image/png -i")
    ,("M-S-e", spawn "thunar")
+   ,("M-s", spawn "sh ~/.switchLang.sh")
    ]
 
 myStartupHook = do

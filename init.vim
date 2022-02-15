@@ -38,6 +38,7 @@ call plug#begin("~/.vim/plugged")
  Plug 'vim-scripts/vim-gitgutter'
  Plug 'nvim-lualine/lualine.nvim'
  Plug 'kyazdani42/nvim-web-devicons'
+ Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 filetype plugin on

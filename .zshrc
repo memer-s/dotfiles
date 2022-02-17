@@ -5,6 +5,7 @@ alias ls="exa --icons"
 alias lsa="exa -a --icons"
 alias cls="clear"
 alias tmux="TERM=xterm-256color tmux"
+alias jk="nvim"
 
 PROMPT=' %F{118}%B%~%b%f '
 RPROMPT='%F{238}%T%f'
@@ -27,5 +28,5 @@ echo """
 
 
 
-welcome retar
+bruh bruh bruh bruh bruh bruh bruh
 """ | lolcat
